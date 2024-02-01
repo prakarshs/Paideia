@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Condensed';
+}
+.ri-close-fill{
+    color: var(--orange);
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--black_transperent);
+}
+
+:root {
+    --black: #262525;
+    --black_transperent: #262525b2;
+    --orange: #FF4C29;
+    --light_black: #3E3939;
+    --light_black_transparent: #3e393988;
+    --white: #F7F7F7;
+}
+
+*::selection {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+#header-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+
+}
+
+header {
+    width: 96%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+}
+
+header a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2vw;
+    transition: 0.2s;
+}
+
+header ul .active,
+header ul a:hover {
+    color: var(--orange);
+}
+
+header .logo {
+    font-size: 2rem;
+}
+
+header .logo i {
+    color: var(--orange);
+}
+
+header .burger-menu i {
+    font-size: 1.5rem;
+    color: var(--orange);
+    cursor: pointer;
+}
+
+header .burger-menu {
+    display: none;
+}
+
+video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    z-index: -10000;
+}
+
+
+
+@media (max-width:820px) {
+
+    html,
+    body {
+        font-size: 85%;
+    }
+
+    video {
+        object-fit: cover;
+        object-position: 70%;
+    }
+
+    header .burger-menu {
+        display: block;
+    }
+    header{
+        z-index: 100000;
+    }
+
+    header ul {
+        position: fixed;
+        top: -100rem;
+        left: 0;
+        width: 100%;
+        background-color: var(--light_black);
+        flex-direction: column;
+        gap: 0.05rem;
+        align-items: center;
+        border-radius: 5rem;
+        opacity: 0;
+    }
+
+    header ul li {
+        margin: 1rem 0;
+        font-size: 1rem;
+    }
+}
